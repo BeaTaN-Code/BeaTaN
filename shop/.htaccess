@@ -1,0 +1,42 @@
+# BeaTaN Shop — Apache / LiteSpeed (Hostinger)
+# Defensa en profundidad: el código privado debe vivir FUERA de public_html.
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+ServerSignature Off
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Forzar HTTPS en producción (descomenta tras activar el SSL en hPanel):
+  # RewriteCond %{HTTPS} !=on
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Bloquea repositorios y archivos ocultos (excepto .well-known para SSL)
+  RewriteRule (^|/)\.(?!well-known/) - [F,L]
+  # Todo lo que no sea un archivo real pasa por el controlador frontal
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ index.php [L,QSA]
+</IfModule>
+
+# Copias de seguridad, volcados, configuración y documentación: nunca públicos
+<FilesMatch "(?i)(\.(sql|bak|old|orig|save|swp|log|ini|env|zip|tar|gz|tgz|7z|rar|md|lock|ya?ml|dist|sh|phar|json)|~)$">
+  Require all denied
+</FilesMatch>
+
+# Solo index.php se ejecuta como PHP
+<FilesMatch "(?i)\.(php\d?|phtml|phps|pht|inc)$">
+  Require all denied
+</FilesMatch>
+<Files "index.php">
+  Require all granted
+</Files>
+
+<IfModule mod_headers.c>
+  Header always unset X-Powered-By
+  <FilesMatch "\.(css|js|svg|webp|jpe?g|png|woff2?)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml text/plain
+</IfModule>
