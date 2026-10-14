@@ -1,0 +1,27 @@
+# Lampkeepers — static hosting configuration for Apache / LiteSpeed (Hostinger).
+# No server-side code is required. This file only improves caching and MIME types.
+
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType image/svg+xml .svg
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/json
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Hashed build assets never change: cache for a year.
+  <FilesMatch "\.(js|css|svg|png|webp|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Always revalidate the entry page so new builds are picked up.
+  <FilesMatch "index\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
