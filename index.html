@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>BeaTaN Group — Una red, muchos universos</title>
+  <meta name="description" content="BeaTaN Group es un ecosistema creativo y tecnológico que conecta gastronomía, eventos, música y software: BeaTaN Flavor, BeaTaN Fest, BeaTaN Records y BeaTaN Code." />
+  <meta name="theme-color" content="#07060a" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" href="https://beatan.com.co/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BeaTaN Group" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:title" content="BeaTaN Group — Una red, muchos universos" />
+  <meta property="og:description" content="Gastronomía, eventos, música y tecnología unidos por un mismo hilo." />
+  <meta property="og:url" content="https://beatan.com.co/" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=Syne:wght@700;800&display=swap" />
+  <link rel="stylesheet" href="assets/css/beatan.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+  <script defer src="assets/js/beatan.js"></script>
+  <script defer src="assets/js/web.js"></script>
+</head>
+<body class="bt-grain">
+  <a class="bt-skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="bt-header">
+    <div class="bt-wrap bt-header__inner">
+      <a class="bt-brand" href="./" aria-label="BeaTaN Group, inicio">
+        <svg class="bt-brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14.2 9.2 9 5.5 7.5 2.5M13.8 10.6 7 9.4 3.5 6.8M13.8 12.2 7 14.6 3.8 19.4M14.2 13.8 9.4 20 8.6 26.5M17.8 9.2 23 5.5 24.5 2.5M18.2 10.6 25 9.4 28.5 6.8M18.2 12.2 25 14.6 28.2 19.4M17.8 13.8 22.6 20 23.4 26.5"/></g><path fill="currentColor" d="M16 6.2 18.3 9.6 16 13 13.7 9.6Z"/><path fill="currentColor" d="M16 13.4 19.6 19.4 16 29.4 12.4 19.4Z"/><path fill="#e3262f" d="M16 16.8 17.3 19.6 16 22.6 14.7 19.6Z"/></svg>
+        <span class="bt-brand__word">Bea<b>TaN</b><span class="bt-brand__sub">GROUP</span></span>
+      </a>
+      <nav class="bt-nav" aria-label="Principal">
+        <button class="bt-nav__toggle" type="button" aria-expanded="false" aria-controls="bt-menu">
+          <span class="bt-nav__toggle-lines" aria-hidden="true"><span></span><span></span></span>
+          Menú
+        </button>
+        <ul class="bt-nav__list" id="bt-menu">
+          <li><a class="bt-nav__link" href="#universos">Universos</a></li>
+          <li><a class="bt-nav__link" href="#proyectos">Proyectos</a></li>
+          <li><a class="bt-nav__link" href="#filosofia">Filosofía</a></li>
+          <li><a class="bt-nav__link" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Easter egg: la araña que acompaña el scroll (docs/easter-eggs.md) -->
+  <div class="bt-dangler">
+    <div class="bt-dangler__thread"></div>
+    <button class="bt-dangler__spider" type="button" aria-label="Una pequeña araña cuelga de su hilo. Tócala.">
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.2 9.2 9 5.5 7.5 2.5M13.8 10.6 7 9.4 3.5 6.8M13.8 12.2 7 14.6 3.8 19.4M14.2 13.8 9.4 20 8.6 26.5M17.8 9.2 23 5.5 24.5 2.5M18.2 10.6 25 9.4 28.5 6.8M18.2 12.2 25 14.6 28.2 19.4M17.8 13.8 22.6 20 23.4 26.5"/></g><path fill="currentColor" d="M16 6.2 18.3 9.6 16 13 13.7 9.6Z"/><path fill="currentColor" d="M16 13.4 19.6 19.4 16 29.4 12.4 19.4Z"/><path fill="#e3262f" d="M16 16.8 17.3 19.6 16 22.6 14.7 19.6Z"/></svg>
+    </button>
+  </div>
+
+  <main id="contenido">
+    <!-- ============================================================ HERO -->
+    <section class="bt-hero" aria-labelledby="hero-title">
+      <div class="bt-hero__web">
+        <canvas data-bt-web aria-hidden="true"></canvas>
+        <!-- Red estática para navegadores sin JavaScript -->
+        <svg class="bt-hero__fallback" viewBox="-100 -100 200 200" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="0.25">
+            <path d="M0 0 100 0M0 0 81 59M0 0 31 95M0 0-31 95M0 0-81 59M0 0-100 0M0 0-81-59M0 0-31-95M0 0 31-95M0 0 81-59"/>
+            <circle r="12"/><circle r="22"/><circle r="33"/><circle r="45"/><circle r="58"/><circle r="72"/><circle r="87"/>
+          </g>
+          <circle r="2" fill="#e3262f"/>
+        </svg>
+        <a class="bt-anchor" data-web-anchor="-70" href="#flavor" tabindex="-1" aria-hidden="true">Flavor</a>
+        <a class="bt-anchor" data-web-anchor="-12" href="#fest" tabindex="-1" aria-hidden="true">Fest</a>
+        <a class="bt-anchor" data-web-anchor="38" href="#records" tabindex="-1" aria-hidden="true">Records</a>
+        <a class="bt-anchor" data-web-anchor="96" href="#code" tabindex="-1" aria-hidden="true">Code</a>
+      </div>
+
+      <div class="bt-wrap">
+        <div class="bt-hero__content">
+          <p class="bt-eyebrow" data-enter style="--i:0">Ecosistema creativo &amp; tecnológico</p>
+          <h1 class="bt-hero__title" id="hero-title">
+            <span class="bt-line" data-enter style="--i:1">Tejemos</span>
+            <span class="bt-line" data-enter style="--i:2"><em>mundos</em> que</span>
+            <span class="bt-line" data-enter style="--i:3">se conectan.</span>
+          </h1>
+          <p class="bt-lead bt-hero__lead" data-enter style="--i:4">
+            BeaTaN Group es el centro de una red donde la cocina, los eventos, la música y el software
+            comparten un mismo hilo: construir experiencias con carácter, paciencia y oficio.
+          </p>
+          <div class="bt-hero__actions" data-enter style="--i:5">
+            <a class="bt-btn bt-btn--solid" href="#universos">Explorar los universos <span class="bt-btn__arrow" aria-hidden="true">→</span></a>
+            <a class="bt-btn" href="#filosofia">Nuestra filosofía</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bt-hero__foot">
+        <div class="bt-wrap">
+          <ul class="bt-hero__index" aria-label="Accesos rápidos a las marcas">
+            <li><a href="#flavor"><span>01</span>Flavor</a></li>
+            <li><a href="#fest"><span>02</span>Fest</a></li>
+            <li><a href="#records"><span>03</span>Records</a></li>
+            <li><a href="#code"><span>04</span>Code</a></li>
+          </ul>
+          <button class="bt-pluck bt-no-js-hide" type="button" data-web-pluck>
+            <span class="bt-pluck__dot" aria-hidden="true"></span> Toca la red
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= MANIFIESTO -->
+    <section class="bt-manifesto" aria-label="Manifiesto">
+      <div class="bt-wrap bt-manifesto__grid">
+        <p class="bt-manifesto__text bt-reveal">
+          Una araña no improvisa. Mide, <strong>ancla</strong> y teje. Así construimos cada marca: hilo a hilo, hasta que todo se sostiene.
+        </p>
+        <p class="bt-lead bt-reveal" style="--bt-delay:.15s">
+          Cuatro disciplinas que a primera vista no tienen nada en común. Las une la misma pregunta:
+          ¿cómo se crea algo que la gente quiera vivir, escuchar, probar o usar?
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================================================== UNIVERSOS -->
+    <section class="bt-section" id="universos" aria-labelledby="universos-title">
+      <div class="bt-wrap">
+        <div class="bt-worlds__head">
+          <div>
+            <p class="bt-eyebrow bt-reveal">Los universos</p>
+            <h2 class="bt-h2 bt-reveal" id="universos-title" style="margin-top:24px">Cuatro mundos,<br /><em>un mismo hilo.</em></h2>
+          </div>
+          <p class="bt-lead bt-reveal" style="--bt-delay:.1s">
+            Cada división tiene su propio lenguaje, su ritmo y su público. Ninguna es una copia de la otra;
+            todas responden a la misma red.
+          </p>
+        </div>
+
+        <ol class="bt-worlds__list" role="list">
+          <!-- 01 · FLAVOR -->
+          <li class="bt-world bt-world--flavor" id="flavor">
+            <div class="bt-world__art bt-art-flavor bt-reveal" aria-hidden="true">
+              <svg class="bt-art-flavor__steam" viewBox="0 0 200 160" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                <path d="M70 160C60 130 90 115 78 88S70 40 92 18"/>
+                <path d="M100 160C92 128 118 112 106 84S100 38 120 10"/>
+                <path d="M130 160C122 134 148 116 136 92S128 52 146 28"/>
+              </svg>
+              <div class="bt-art-flavor__plate"></div>
+              <p class="bt-art-flavor__word">sabor</p>
+            </div>
+            <div class="bt-world__body bt-reveal" style="--bt-delay:.1s">
+              <p class="bt-world__num"><b>01</b> / 04 · Gastronomía</p>
+              <h3 class="bt-world__name"><small>BEATAN</small>Flavor</h3>
+              <p class="bt-world__tag">Cocina con carácter, servida sin rodeos.</p>
+              <p class="bt-world__desc">
+                La división gastronómica del grupo. Explora conceptos de cocina oculta, hamburguesas,
+                desayunos y propuestas de comida pensadas para disfrutarse en casa o en el camino.
+              </p>
+              <div class="bt-world__meta">
+                <span class="bt-chip bt-chip--dev">En desarrollo</span>
+                <a class="bt-btn" href="flavor/">Entrar a Flavor <span class="bt-btn__arrow" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 02 · FEST -->
+          <li class="bt-world bt-world--fest" id="fest">
+            <div class="bt-world__art bt-art-fest bt-reveal" aria-hidden="true">
+              <div class="bt-art-fest__beams"></div>
+              <p class="bt-art-fest__word">LIVE<span>FEST</span></p>
+              <div class="bt-art-fest__eq">
+                <i style="--d:1"></i><i style="--d:4"></i><i style="--d:2"></i><i style="--d:7"></i><i style="--d:3"></i><i style="--d:6"></i><i style="--d:5"></i><i style="--d:8"></i><i style="--d:2"></i><i style="--d:5"></i><i style="--d:3"></i><i style="--d:6"></i>
+              </div>
+            </div>
+            <div class="bt-world__body bt-reveal" style="--bt-delay:.1s">
+              <p class="bt-world__num"><b>02</b> / 04 · Eventos</p>
+              <h3 class="bt-world__name"><small>BEATAN</small>Fest</h3>
+              <p class="bt-world__tag">Noches que se recuerdan en el cuerpo.</p>
+              <p class="bt-world__desc">
+                Fiestas, experiencias musicales y eventos en vivo. Su primer gran proyecto,
+                <strong>Proyecto Scorpio</strong>, está en planeación para noviembre de 2026.
+              </p>
+              <div class="bt-world__meta">
+                <span class="bt-chip bt-chip--dev">En planeación</span>
+                <a class="bt-btn" href="fest/">Entrar a Fest <span class="bt-btn__arrow" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 03 · RECORDS -->
+          <li class="bt-world bt-world--records" id="records">
+            <div class="bt-world__art bt-art-records bt-reveal" aria-hidden="true">
+              <svg class="bt-art-records__disc" viewBox="-100 -100 200 200">
+                <circle r="100" fill="#0b0909"/>
+                <g fill="none" stroke="rgba(236,232,230,.08)" stroke-width=".6">
+                  <circle r="94"/><circle r="88"/><circle r="82"/><circle r="76"/><circle r="70"/><circle r="64"/><circle r="58"/><circle r="52"/><circle r="46"/><circle r="40"/>
+                </g>
+                <!-- radios de telaraña cruzando los surcos -->
+                <g stroke="rgba(255,92,99,.22)" stroke-width=".5">
+                  <path d="M0-96V-38M0 96V38M-96 0H-38M96 0H38M-68-68-27-27M68 68 27 27M68-68 27-27M-68 68-27 27"/>
+                </g>
+                <ellipse cx="-30" cy="-40" rx="70" ry="14" transform="rotate(-35)" fill="rgba(255,255,255,.035)"/>
+                <circle r="34" fill="#c4161f"/>
+                <circle r="34" fill="none" stroke="rgba(0,0,0,.35)" stroke-width="6"/>
+                <text y="-8" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="9" fill="#fff">BeaTaN</text>
+                <text y="6" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="5" letter-spacing="2" fill="rgba(255,255,255,.75)">RECORDS</text>
+                <circle r="2.4" fill="#0b0909"/>
+              </svg>
+              <svg class="bt-art-records__arm" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                <circle cx="85" cy="12" r="7"/>
+                <path d="M85 12 70 70 52 88"/>
+                <rect x="44" y="84" width="12" height="8" rx="1" transform="rotate(40 50 88)"/>
+              </svg>
+            </div>
+            <div class="bt-world__body bt-reveal" style="--bt-delay:.1s">
+              <p class="bt-world__num"><b>03</b> / 04 · Música</p>
+              <h3 class="bt-world__name"><small>BEATAN</small>Records</h3>
+              <p class="bt-world__tag">Discos con historia, no solo canciones.</p>
+              <p class="bt-world__desc">
+                Sello musical: lanzamientos, producción y artistas. Su primer álbum conceptual,
+                <strong>VÉNORA</strong> de Jobick C., se estrena el 11 de diciembre de 2026.
+              </p>
+              <div class="bt-world__meta">
+                <span class="bt-chip bt-chip--live">Experiencia web activa</span>
+                <a class="bt-btn" href="records/">Entrar a Records <span class="bt-btn__arrow" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 04 · CODE -->
+          <li class="bt-world bt-world--code" id="code">
+            <div class="bt-world__art bt-art-code bt-reveal" aria-hidden="true">
+              <p class="bt-art-code__glyph">&lt;/&gt;</p>
+              <div class="bt-art-code__term">
+                <div class="bt-art-code__bar"><i></i><i></i><i></i></div>
+<pre><span class="c">// la red también se programa</span>
+<span class="k">const</span> red = tejer({
+  nodos: [<span class="s">"web"</span>, <span class="s">"ia"</span>, <span class="s">"apps"</span>],
+  hilo: <span class="s">"automatización"</span>
+});
+red.conectar(<span class="s">"tu idea"</span>);<span class="bt-cursor"></span></pre>
+              </div>
+            </div>
+            <div class="bt-world__body bt-reveal" style="--bt-delay:.1s">
+              <p class="bt-world__num"><b>04</b> / 04 · Tecnología</p>
+              <h3 class="bt-world__name"><small>BEATAN</small>Code</h3>
+              <p class="bt-world__tag">El software que sostiene la red.</p>
+              <p class="bt-world__desc">
+                Aplicaciones, páginas web, inteligencia artificial, automatizaciones y videojuegos.
+                BeaTaN Code tiene su propio sitio, independiente de este dominio.
+              </p>
+              <div class="bt-world__meta">
+                <span class="bt-chip bt-chip--ext">Sitio independiente</span>
+                <a class="bt-btn" href="https://beatancode.com/master/index.html" target="_blank" rel="noopener noreferrer">
+                  Visitar BeaTaN Code <span class="bt-btn__arrow bt-btn__arrow--ne" aria-hidden="true">↗</span>
+                  <span class="bt-sr-only">(beatancode.com, se abre en una pestaña nueva)</span>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ======================================================== PROYECTOS -->
+    <section class="bt-section bt-projects" id="proyectos" aria-labelledby="proyectos-title">
+      <div class="bt-wrap">
+        <p class="bt-eyebrow bt-reveal">Proyectos en la red</p>
+        <h2 class="bt-h2 bt-reveal" id="proyectos-title" style="margin-top:24px">Hilos que ya<br /><em>puedes tocar.</em></h2>
+
+        <div class="bt-projects__grid">
+          <a class="bt-project bt-reveal" href="records/venora/">
+            <div class="bt-project__media">
+              <img src="records/venora/assets/web/cover.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Portada del álbum VÉNORA de Jobick C." />
+            </div>
+            <div class="bt-project__body">
+              <p class="bt-project__kicker"><span>BeaTaN Records · Álbum</span><span>Jobick C. · 11.12.2026</span></p>
+              <h3 class="bt-project__title">VÉNORA</h3>
+              <p class="bt-project__desc">
+                Álbum conceptual de dos caras: Lado A, <em>La Euforia</em>, y Lado B, <em>La Caída</em>.
+                Diez canciones, estreno el 11 de diciembre de 2026, y una experiencia web para descubrirlo antes.
+              </p>
+              <span class="bt-link bt-project__cta">Abrir la experiencia →</span>
+            </div>
+          </a>
+
+          <a class="bt-project bt-project--game bt-reveal" href="games/" style="--bt-delay:.12s">
+            <div class="bt-project__media">
+              <div class="bt-art-duo" aria-hidden="true">
+                <span class="bt-art-duo__orb bt-art-duo__orb--lumen"></span>
+                <span class="bt-art-duo__orb bt-art-duo__orb--umbra"></span>
+                <span class="bt-art-duo__ground"></span>
+              </div>
+            </div>
+            <div class="bt-project__body">
+              <p class="bt-project__kicker"><span>BeaTaN Games · Juego web</span><span>Cooperativo</span></p>
+              <h3 class="bt-project__title">Lumen &amp; Umbra</h3>
+              <p class="bt-project__desc">
+                Plataformas cooperativo de dos espíritus elementales. Se juega en el navegador,
+                en solitario o en línea con un amigo mediante un código de invitación.
+              </p>
+              <span class="bt-link bt-project__cta">Ver en Games →</span>
+            </div>
+          </a>
+        </div>
+        <p class="bt-projects__more bt-reveal">Más hilos en camino. La red crece cuando cada proyecto está listo.</p>
+      </div>
+    </section>
+
+    <!-- ======================================================== FILOSOFÍA -->
+    <section class="bt-section bt-philo" id="filosofia" aria-labelledby="filosofia-title">
+      <div class="bt-wrap">
+        <p class="bt-eyebrow bt-reveal">Filosofía</p>
+        <h2 class="bt-sr-only" id="filosofia-title">Filosofía</h2>
+        <p class="bt-philo__quote bt-reveal">
+          La araña es nuestro símbolo porque <span>piensa antes de tejer</span>, y porque su obra
+          solo funciona cuando cada hilo está conectado.
+        </p>
+        <ol class="bt-principles" role="list">
+          <li class="bt-principle bt-reveal">
+            <h3>Construir con paciencia</h3>
+            <p>Preferimos lanzar menos y lanzar bien. Un proyecto entra a la red cuando está listo para sostener peso.</p>
+          </li>
+          <li class="bt-principle bt-reveal" style="--bt-delay:.1s">
+            <h3>Conectar lo que parece distinto</h3>
+            <p>Una hamburguesa, un festival, un disco y una aplicación tienen algo en común: son experiencias. Lo que aprende una marca alimenta a las demás.</p>
+          </li>
+          <li class="bt-principle bt-reveal" style="--bt-delay:.2s">
+            <h3>Diseñar con intención</h3>
+            <p>Cada detalle tiene una función. Si algo se mueve, es para guiarte; si algo brilla, es porque importa.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================================================= CONTACTO -->
+    <section class="bt-section bt-contact" id="contacto" aria-labelledby="contacto-title">
+      <div class="bt-wrap bt-contact__grid">
+        <div>
+          <p class="bt-eyebrow bt-reveal">Contacto</p>
+          <h2 class="bt-h2 bt-reveal" id="contacto-title" style="margin-top:24px">¿Quieres ser<br /><em>parte de la red?</em></h2>
+          <p class="bt-lead bt-reveal" style="margin-top:28px">
+            Alianzas, artistas, eventos o proyectos digitales: cada conversación puede convertirse en un nuevo hilo.
+          </p>
+        </div>
+        <!-- CONFIGURABLE: reemplazar los valores «Por anunciar» cuando existan canales oficiales verificados -->
+        <div class="bt-contact__panel bt-reveal" style="--bt-delay:.1s">
+          <p>Estamos habilitando los canales oficiales del grupo. Mientras tanto:</p>
+          <div>
+            <div class="bt-contact__row"><span>Correo</span><span>Por anunciar</span></div>
+            <div class="bt-contact__row"><span>Redes del grupo</span><span>Por anunciar</span></div>
+            <div class="bt-contact__row"><span>Proyectos de software</span><a class="bt-link" href="https://beatancode.com/master/index.html" target="_blank" rel="noopener noreferrer">beatancode.com ↗<span class="bt-sr-only"> (se abre en una pestaña nueva)</span></a></div>
+            <div class="bt-contact__row"><span>Música</span><a class="bt-link" href="records/">BeaTaN Records →</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bt-footer">
+    <div class="bt-wrap">
+      <div class="bt-footer__grid">
+        <div>
+          <a class="bt-brand" href="./" aria-label="BeaTaN Group, inicio">
+            <svg class="bt-brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14.2 9.2 9 5.5 7.5 2.5M13.8 10.6 7 9.4 3.5 6.8M13.8 12.2 7 14.6 3.8 19.4M14.2 13.8 9.4 20 8.6 26.5M17.8 9.2 23 5.5 24.5 2.5M18.2 10.6 25 9.4 28.5 6.8M18.2 12.2 25 14.6 28.2 19.4M17.8 13.8 22.6 20 23.4 26.5"/></g><path fill="currentColor" d="M16 6.2 18.3 9.6 16 13 13.7 9.6Z"/><path fill="currentColor" d="M16 13.4 19.6 19.4 16 29.4 12.4 19.4Z"/><path fill="#e3262f" d="M16 16.8 17.3 19.6 16 22.6 14.7 19.6Z"/></svg>
+            <span class="bt-brand__word">Bea<b>TaN</b><span class="bt-brand__sub">GROUP</span></span>
+          </a>
+          <p class="bt-footer__note">Un ecosistema creativo y tecnológico. Una red, muchos universos.</p>
+        </div>
+        <div>
+          <p class="bt-footer__title">Universos</p>
+          <ul class="bt-footer__list">
+            <li><a href="flavor/">BeaTaN Flavor</a></li>
+            <li><a href="fest/">BeaTaN Fest</a></li>
+            <li><a href="records/">BeaTaN Records</a></li>
+            <li><a href="https://beatancode.com/master/index.html" target="_blank" rel="noopener noreferrer">BeaTaN Code ↗<span class="bt-sr-only"> (se abre en una pestaña nueva)</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="bt-footer__title">Proyectos</p>
+          <ul class="bt-footer__list">
+            <li><a href="records/venora/">VÉNORA</a></li>
+            <li><a href="games/">BeaTaN Games</a></li>
+            <li><a href="games/fireandwater/">Lumen &amp; Umbra</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="bt-footer__title">La red</p>
+          <ul class="bt-footer__list">
+            <li><a href="#filosofia">Filosofía</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><button class="bt-silk-btn" type="button" data-bt-silk-toggle aria-pressed="false">Seda roja</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="bt-footer__giant" aria-hidden="true">BeaTaN</p>
+      <div class="bt-footer__bottom">
+        <span>© <span data-bt-year>2026</span> BeaTaN Group</span>
+        <span>Marcas e identidades visuales provisionales</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
