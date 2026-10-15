@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=Syne:wght@700;800&display=swap" />
   <link rel="stylesheet" href="assets/css/beatan.css" />
   <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="stylesheet" href="assets/css/games.css" />
   <script defer src="assets/js/beatan.js"></script>
   <script defer src="assets/js/web.js"></script>
 </head>
@@ -42,6 +43,7 @@
         </button>
         <ul class="bt-nav__list" id="bt-menu">
           <li><a class="bt-nav__link" href="#universos">Universos</a></li>
+          <li><a class="bt-nav__link" href="#juegos">Juegos (4)</a></li>
           <li><a class="bt-nav__link" href="#proyectos">Proyectos</a></li>
           <li><a class="bt-nav__link" href="#filosofia">Filosofía</a></li>
           <li><a class="bt-nav__link" href="#contacto">Contacto</a></li>
@@ -91,6 +93,7 @@
           </p>
           <div class="bt-hero__actions" data-enter style="--i:5">
             <a class="bt-btn bt-btn--solid" href="#universos">Explorar los universos <span class="bt-btn__arrow" aria-hidden="true">→</span></a>
+            <a class="bt-btn" href="#juegos">Juegos Web (4) 🎮</a>
             <a class="bt-btn" href="#filosofia">Nuestra filosofía</a>
           </div>
         </div>
@@ -286,7 +289,7 @@ red.conectar(<span class="s">"tu idea"</span>);<span class="bt-cursor"></span></
             </div>
           </a>
 
-          <a class="bt-project bt-project--game bt-reveal" href="games/" style="--bt-delay:.12s">
+          <div class="bt-project bt-project--game bt-reveal" style="--bt-delay:.12s">
             <div class="bt-project__media">
               <div class="bt-art-duo" aria-hidden="true">
                 <span class="bt-art-duo__orb bt-art-duo__orb--lumen"></span>
@@ -295,17 +298,136 @@ red.conectar(<span class="s">"tu idea"</span>);<span class="bt-cursor"></span></
               </div>
             </div>
             <div class="bt-project__body">
-              <p class="bt-project__kicker"><span>BeaTaN Games · Juego web</span><span>Cooperativo</span></p>
-              <h3 class="bt-project__title">Lumen &amp; Umbra</h3>
+              <p class="bt-project__kicker"><span>BeaTaN Games Studio</span><span>4 Títulos Web Activos</span></p>
+              <h3 class="bt-project__title">Catálogo Arcade Web</h3>
               <p class="bt-project__desc">
-                Plataformas cooperativo de dos espíritus elementales. Se juega en el navegador,
-                en solitario o en línea con un amigo mediante un código de invitación.
+                Videojuegos interactivos jugables al instante en el navegador: arenas multijugador 3D,
+                plataformas cooperativos P2P, defensa táctica y party games de supervivencia.
               </p>
-              <span class="bt-link bt-project__cta">Ver en Games →</span>
+              <ul class="bt-project-games-mini" role="list">
+                <li><a href="games/congelados/"><span class="bt-project-games-mini__dot" style="background:#7af0ff"></span>Congelados 3D</a></li>
+                <li><a href="games/fireandwater/"><span class="bt-project-games-mini__dot" style="background:#ffaa3c"></span>Lumen &amp; Umbra</a></li>
+                <li><a href="games/lampkeepers/"><span class="bt-project-games-mini__dot" style="background:#ffb547"></span>Lampkeepers</a></li>
+                <li><a href="games/pf/"><span class="bt-project-games-mini__dot" style="background:#b8f2e6"></span>Piso Fantasma</a></li>
+              </ul>
+              <div><a class="bt-link bt-project__cta" href="games/">Abrir el catálogo de juegos →</a></div>
             </div>
-          </a>
+          </div>
         </div>
         <p class="bt-projects__more bt-reveal">Más hilos en camino. La red crece cuando cada proyecto está listo.</p>
+      </div>
+    </section>
+
+    <!-- ======================================================== JUEGOS WEB -->
+    <section class="bt-section bt-home-games" id="juegos" aria-labelledby="juegos-title">
+      <div class="bt-wrap">
+        <div class="bt-sec-head">
+          <div>
+            <p class="bt-eyebrow bt-reveal">BeaTaN Games Studio</p>
+            <h2 class="bt-h2 bt-reveal" id="juegos-title">Cuatro juegos,<br /><em>cero descargas.</em></h2>
+          </div>
+          <p class="bt-lead bt-reveal">
+            Abre cualquiera de estos títulos directo en tu navegador web, tanto en celular como en PC.
+            Compite con amigos con salas privadas o juega en solitario.
+          </p>
+        </div>
+
+        <ul class="bt-home-games__grid" role="list">
+          <!-- CARD 1: CONGELADOS -->
+          <li class="bt-home-card bt-reveal" style="--h-card-accent: #7af0ff; --h-card-glow: rgba(122, 240, 255, 0.35);">
+            <div class="bt-home-card__art" aria-hidden="true">
+              <div class="bt-art-congelados">
+                <div class="bt-congelados-arena" style="width: 140px; height: 140px;"></div>
+                <svg class="bt-ice-hex" viewBox="-110 -110 220 220" style="width: 60px; height: 60px;">
+                  <polygon points="0,-104 90,-52 90,52 0,104 -90,52 -90,-52" />
+                  <path d="M14 -14 L44 -52 L62 -30 M16 -6 L56 -26 L78 0 M16 4 L54 14 L74 46 M12 12 L40 36 L50 70 M-14 -14 L-44 -52 L-62 -30 M-16 -6 L-56 -26 L-78 0 M-16 4 L-54 14 L-74 46 M-12 12 L-40 36 L-50 70" stroke="#ff3b5c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <ellipse cx="0" cy="26" rx="27" ry="36" fill="#16121f" stroke="#ff3b5c" stroke-width="4"/>
+                  <ellipse cx="0" cy="-16" rx="18" ry="16" fill="#16121f" stroke="#ff3b5c" stroke-width="4"/>
+                  <path d="M-9 10 L9 10 L0 24 L9 40 L-9 40 L0 24 Z" fill="#ff3b5c"/>
+                </svg>
+              </div>
+              <span class="bt-home-card__badge">Three.js 3D</span>
+              <img class="bt-home-card__icon" src="games/congelados/favicon.svg" alt="Icono Congelados" width="36" height="36" loading="lazy" />
+            </div>
+            <div class="bt-home-card__body">
+              <h3 class="bt-home-card__title">CONGELADOS: <em>CAOS HELADO</em></h3>
+              <p class="bt-home-card__desc">Fiesta multijugador 3D de persecución: corre, congela rivales y rescata a tus aliados en la arena helada.</p>
+              <div class="bt-home-card__meta">
+                <span class="bt-home-card__players">1 - 8 Jugadores · Online &amp; Bots</span>
+                <a class="bt-home-card__btn" href="games/congelados/">Jugar Ahora →</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- CARD 2: LUMEN & UMBRA -->
+          <li class="bt-home-card bt-reveal" style="--h-card-accent: #ffaa3c; --h-card-glow: rgba(255, 170, 60, 0.35);">
+            <div class="bt-home-card__art" aria-hidden="true">
+              <div class="bt-art-lumen">
+                <span class="bt-art-lumen__orb bt-art-lumen__orb--lumen" style="width: 32px; height: 32px; margin: -16px 0 0 -16px;"></span>
+                <span class="bt-art-lumen__orb bt-art-lumen__orb--umbra" style="width: 32px; height: 32px; margin: -16px 0 0 -16px;"></span>
+              </div>
+              <span class="bt-home-card__badge">WebRTC P2P</span>
+              <img class="bt-home-card__icon" src="games/fireandwater/favicon.svg" alt="Icono Lumen &amp; Umbra" width="36" height="36" loading="lazy" />
+            </div>
+            <div class="bt-home-card__body">
+              <h3 class="bt-home-card__title">Lumen <em>&amp;</em> Umbra</h3>
+              <p class="bt-home-card__desc">Plataformas cooperativo de dos espíritus elementales. Fuego solar y tinta del vacío resolviendo acertijos juntos.</p>
+              <div class="bt-home-card__meta">
+                <span class="bt-home-card__players">1 - 2 Jugadores · Cooperativo</span>
+                <a class="bt-home-card__btn" href="games/fireandwater/">Jugar Ahora →</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- CARD 3: LAMPKEEPERS -->
+          <li class="bt-home-card bt-reveal" style="--h-card-accent: #ffb547; --h-card-glow: rgba(255, 181, 71, 0.35);">
+            <div class="bt-home-card__art" aria-hidden="true">
+              <div class="bt-art-lampkeepers">
+                <div class="bt-fog-layer"></div>
+                <div class="bt-lighthouse-beam" style="width: 140px; height: 60px;"></div>
+                <div class="bt-lantern-glow" style="width: 20px; height: 20px; margin: -10px 0 0 -10px;"></div>
+              </div>
+              <span class="bt-home-card__badge">Lane Defense</span>
+              <img class="bt-home-card__icon" src="games/lampkeepers/favicon.svg" alt="Icono Lampkeepers" width="36" height="36" loading="lazy" />
+            </div>
+            <div class="bt-home-card__body">
+              <h3 class="bt-home-card__title">Lampkeepers: <em>Murk</em></h3>
+              <p class="bt-home-card__desc">Estrategia táctica y defensa de líneas: mantén encendido el faro sagrado contra la niebla viviente.</p>
+              <div class="bt-home-card__meta">
+                <span class="bt-home-card__players">1 Jugador · Táctico</span>
+                <a class="bt-home-card__btn" href="games/lampkeepers/">Jugar Ahora →</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- CARD 4: PISO FANTASMA -->
+          <li class="bt-home-card bt-reveal" style="--h-card-accent: #b8f2e6; --h-card-glow: rgba(184, 242, 230, 0.35);">
+            <div class="bt-home-card__art" aria-hidden="true">
+              <div class="bt-art-pf">
+                <svg class="bt-ghost-sprite" width="48" height="48" viewBox="0 0 64 64">
+                  <path d="M18 34c0-12 6-22 14-22s14 10 14 22v8l-4-3-3 4-4-4-3 4-3-4-4 4-3-4z" fill="#f4f1ff"/>
+                  <circle cx="27" cy="26" r="3.4" fill="#1b1036"/>
+                  <circle cx="37" cy="26" r="3.4" fill="#1b1036"/>
+                </svg>
+              </div>
+              <span class="bt-home-card__badge">Phaser 2D</span>
+              <img class="bt-home-card__icon" src="games/pf/favicon.svg" alt="Icono Piso Fantasma" width="36" height="36" loading="lazy" />
+            </div>
+            <div class="bt-home-card__body">
+              <h3 class="bt-home-card__title">PISO <em>FANTASMA</em></h3>
+              <p class="bt-home-card__desc">Party game frenético: las baldosas cambian y caen al abismo. Sé el último jugador sobre el suelo.</p>
+              <div class="bt-home-card__meta">
+                <span class="bt-home-card__players">Multijugador · Supervivencia</span>
+                <a class="bt-home-card__btn" href="games/pf/">Jugar Ahora →</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="bt-home-games__footer bt-reveal">
+          <p>¿Buscas filtros por género o quieres conocer las mecánicas a fondo?</p>
+          <a class="bt-btn bt-btn--solid" href="games/">Entrar al Catálogo Completo de Games (4) <span class="bt-btn__arrow" aria-hidden="true">→</span></a>
+        </div>
       </div>
     </section>
 
@@ -379,11 +501,14 @@ red.conectar(<span class="s">"tu idea"</span>);<span class="bt-cursor"></span></
           </ul>
         </div>
         <div>
-          <p class="bt-footer__title">Proyectos</p>
+          <p class="bt-footer__title">Proyectos &amp; Juegos</p>
           <ul class="bt-footer__list">
-            <li><a href="records/venora/">VÉNORA</a></li>
-            <li><a href="games/">BeaTaN Games</a></li>
+            <li><a href="records/venora/">VÉNORA (Álbum)</a></li>
+            <li><a href="games/">Catálogo Games (4)</a></li>
+            <li><a href="games/congelados/">Congelados: Caos Helado 3D</a></li>
             <li><a href="games/fireandwater/">Lumen &amp; Umbra</a></li>
+            <li><a href="games/lampkeepers/">Lampkeepers</a></li>
+            <li><a href="games/pf/">Piso Fantasma</a></li>
           </ul>
         </div>
         <div>

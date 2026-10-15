@@ -645,6 +645,41 @@
 }
 .bt-project--game .bt-project__media { aspect-ratio: 16 / 13; }
 
+/* Mini lista interactiva de juegos en la tarjeta de proyectos */
+.bt-project-games-mini {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+.bt-project-games-mini li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  font-family: var(--bt-mono);
+  font-size: 0.72rem;
+  color: var(--bt-text);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.bt-project-games-mini li a:hover {
+  background: rgba(138, 92, 255, 0.15);
+  border-color: rgba(138, 92, 255, 0.4);
+  color: #fff;
+}
+.bt-project-games-mini__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
 .bt-projects__more {
   margin-top: 28px;
   font-family: var(--bt-mono);
@@ -652,6 +687,172 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--bt-faint);
+}
+
+/* ==========================================================================
+   Sección Home: Los 4 Juegos Web en Vivo
+   ========================================================================== */
+.bt-home-games {
+  border-top: 1px solid var(--bt-line);
+  background:
+    radial-gradient(700px 400px at 15% 10%, rgba(138, 92, 255, 0.18), transparent 70%),
+    radial-gradient(600px 400px at 85% 90%, rgba(122, 240, 255, 0.14), transparent 70%),
+    var(--bt-ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.bt-home-games__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(16px, 2.5vw, 24px);
+  list-style: none;
+  padding: 0;
+  margin-top: 36px;
+}
+
+.bt-home-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bt-ink-2);
+  border: 1px solid var(--bt-line-strong);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s var(--bt-ease), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bt-home-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--h-card-accent, rgba(138, 92, 255, 0.5));
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 24px var(--h-card-glow, rgba(138, 92, 255, 0.2));
+}
+
+.bt-home-card__art {
+  position: relative;
+  height: 140px;
+  background: #090c18;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bt-home-card__badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 3px 8px;
+  background: rgba(7, 9, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  font-family: var(--bt-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--h-card-accent, #fff);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+.bt-home-card__icon {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: rgba(7, 9, 18, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 5px;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.bt-home-card__body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 10px;
+}
+
+.bt-home-card__title {
+  font-family: var(--bt-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1.1;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.bt-home-card__desc {
+  font-size: 0.84rem;
+  color: var(--bt-muted);
+  line-height: 1.5;
+}
+
+.bt-home-card__meta {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--bt-line);
+}
+
+.bt-home-card__players {
+  font-family: var(--bt-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--bt-faint);
+  text-transform: uppercase;
+}
+
+.bt-home-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: var(--h-card-accent, var(--bt-accent));
+  color: #fff;
+  font-family: var(--bt-sans);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-height: 38px;
+}
+
+.bt-home-card__btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+.bt-home-games__footer {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  background: rgba(13, 17, 32, 0.6);
+  border: 1px solid var(--bt-line-strong);
+  border-radius: 8px;
+}
+
+.bt-home-games__footer p {
+  color: var(--bt-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .bt-project-games-mini { grid-template-columns: 1fr; }
+  .bt-home-games__grid { grid-template-columns: 1fr; }
+  .bt-home-games__footer { flex-direction: column; align-items: stretch; text-align: center; }
 }
 
 /* --------------------------------------------------------------------------

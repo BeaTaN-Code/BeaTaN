@@ -1,0 +1,936 @@
+/* ==========================================================================
+   BeaTaN Games — Catálogo Arcade & Showcase de Videojuegos Web
+   Diseñado para PC y Celular con estética cyber-organic oscura, rica y responsiva.
+   ========================================================================== */
+
+:root {
+  --bt-game-cyan: #7af0ff;
+  --bt-game-cyan-glow: rgba(122, 240, 255, 0.4);
+  --bt-game-gold: #ffc04a;
+  --bt-game-gold-glow: rgba(255, 192, 74, 0.35);
+  --bt-game-purple: #8a5cff;
+  --bt-game-purple-glow: rgba(138, 92, 255, 0.35);
+  --bt-game-mint: #b8f2e6;
+  --bt-game-mint-glow: rgba(184, 242, 230, 0.35);
+  --bt-game-crimson: #ff3b5c;
+  --bt-game-crimson-glow: rgba(255, 59, 92, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Hero & Ticker
+   -------------------------------------------------------------------------- */
+.bt-games-hero {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: clamp(40px, 6vw, 70px);
+}
+
+.bt-games-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(55% 45% at 20% 30%, rgba(138, 92, 255, 0.22), transparent 70%),
+    radial-gradient(50% 50% at 85% 40%, rgba(122, 240, 255, 0.16), transparent 70%),
+    radial-gradient(60% 60% at 50% 90%, rgba(255, 59, 92, 0.12), transparent 80%),
+    linear-gradient(180deg, rgba(7, 9, 18, 0.6) 0%, rgba(7, 9, 18, 0.98) 100%);
+}
+
+/* Hero Badge */
+.bt-arcade-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(138, 92, 255, 0.12);
+  border: 1px solid rgba(138, 92, 255, 0.35);
+  border-radius: 999px;
+  font-family: var(--bt-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bt-accent-text);
+  margin-bottom: 16px;
+  box-shadow: 0 0 20px rgba(138, 92, 255, 0.2);
+}
+
+.bt-arcade-badge__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--bt-accent-text);
+  box-shadow: 0 0 8px var(--bt-accent-text);
+  animation: bt-pulse 2s ease-in-out infinite;
+}
+
+@keyframes bt-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Quick Features Ticker */
+.bt-games-ticker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+  padding: 14px;
+  background: rgba(13, 17, 32, 0.7);
+  border: 1px solid rgba(138, 92, 255, 0.2);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.bt-ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--bt-mono);
+  font-size: 0.75rem;
+  color: var(--bt-text);
+  letter-spacing: 0.04em;
+}
+
+.bt-ticker-item__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Nexus Art
+   -------------------------------------------------------------------------- */
+.bt-nexus-art {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin-inline: auto;
+  aspect-ratio: 1;
+}
+
+.bt-nexus-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 35px rgba(138, 92, 255, 0.3));
+}
+
+.bt-nexus-radar {
+  animation: bt-radar-spin 30s linear infinite;
+  transform-origin: 200px 200px;
+}
+
+@keyframes bt-radar-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   Featured Spotlight Banner
+   -------------------------------------------------------------------------- */
+.bt-spotlight {
+  position: relative;
+  margin-bottom: clamp(48px, 6vw, 80px);
+  background: linear-gradient(135deg, rgba(16, 22, 45, 0.85) 0%, rgba(9, 12, 25, 0.95) 100%);
+  border: 1px solid rgba(122, 240, 255, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(122, 240, 255, 0.12);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bt-spotlight:hover {
+  border-color: rgba(122, 240, 255, 0.55);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 45px rgba(122, 240, 255, 0.22);
+}
+
+.bt-spotlight__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: stretch;
+}
+
+.bt-spotlight__content {
+  padding: clamp(28px, 4vw, 52px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  z-index: 2;
+}
+
+.bt-spotlight__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--bt-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bt-game-cyan);
+}
+
+.bt-spotlight__title {
+  font-family: var(--bt-display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.bt-spotlight__title em {
+  font-family: var(--bt-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bt-game-cyan);
+}
+
+.bt-spotlight__desc {
+  color: var(--bt-muted);
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  line-height: 1.65;
+  max-width: 58ch;
+}
+
+.bt-spotlight__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bt-spotlight__tags li {
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-family: var(--bt-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bt-text);
+}
+
+.bt-spotlight__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.bt-spotlight__art {
+  position: relative;
+  min-height: 320px;
+  background: radial-gradient(circle at 60% 50%, #0d1a3a 0%, #070a16 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Filter & Search Toolbar
+   -------------------------------------------------------------------------- */
+.bt-catalog-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 36px;
+  padding: 16px 20px;
+  background: rgba(13, 17, 32, 0.85);
+  border: 1px solid var(--bt-line-strong);
+  border-radius: 10px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.bt-catalog-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 2px;
+}
+
+.bt-catalog-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.bt-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid rgba(236, 232, 230, 0.12);
+  color: var(--bt-muted);
+  font-family: var(--bt-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  min-height: 38px;
+}
+
+.bt-filter-btn:hover {
+  color: var(--bt-text);
+  border-color: rgba(236, 232, 230, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.bt-filter-btn.is-active {
+  background: var(--bt-accent);
+  color: #fff;
+  border-color: var(--bt-accent);
+  box-shadow: 0 0 16px var(--bt-accent-glow);
+}
+
+.bt-catalog-search-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 240px;
+  flex-grow: 0;
+}
+
+.bt-catalog-search {
+  width: 100%;
+  padding: 9px 38px 9px 14px;
+  background: rgba(7, 9, 18, 0.8);
+  border: 1px solid rgba(236, 232, 230, 0.16);
+  border-radius: 6px;
+  color: var(--bt-text);
+  font-family: var(--bt-sans);
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bt-catalog-search:focus {
+  outline: none;
+  border-color: var(--bt-accent);
+  box-shadow: 0 0 12px var(--bt-accent-glow);
+}
+
+.bt-catalog-search-wrap svg {
+  position: absolute;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  color: var(--bt-muted);
+  pointer-events: none;
+}
+
+.bt-catalog-counter {
+  font-family: var(--bt-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--bt-faint);
+  margin-top: -12px;
+  margin-bottom: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   Games Grid
+   -------------------------------------------------------------------------- */
+.bt-games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 540px), 1fr));
+  gap: clamp(24px, 3.5vw, 36px);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bt-game-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bt-ink-2);
+  border: 1px solid var(--bt-line-strong);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.35s var(--bt-ease), border-color 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+}
+
+.bt-game-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--card-border-hover, rgba(138, 92, 255, 0.5));
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 30px var(--card-glow, rgba(138, 92, 255, 0.18));
+}
+
+.bt-game-card.is-hidden {
+  display: none !important;
+}
+
+/* Game Card Art Header */
+.bt-game-card__art {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: #090c18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bt-game-card__badge-bar {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.bt-card-badge {
+  padding: 4px 10px;
+  background: rgba(7, 9, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  font-family: var(--bt-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+
+.bt-card-badge--engine {
+  border-color: var(--badge-color, rgba(138, 92, 255, 0.4));
+  color: var(--badge-color, #fff);
+}
+
+.bt-game-card__icon {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(7, 9, 18, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  transition: transform 0.25s ease;
+}
+
+.bt-game-card:hover .bt-game-card__icon {
+  transform: scale(1.08);
+}
+
+/* Game Card Body */
+.bt-game-card__body {
+  padding: clamp(20px, 3.2vw, 32px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 16px;
+}
+
+.bt-game-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bt-game-card__studio {
+  font-family: var(--bt-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--bt-accent-text));
+}
+
+.bt-game-card__title {
+  font-family: var(--bt-display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.bt-game-card__title em {
+  font-family: var(--bt-serif);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--card-accent, #ffc56b);
+}
+
+.bt-game-card__desc {
+  color: var(--bt-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.bt-game-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.bt-game-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: var(--bt-text);
+  line-height: 1.45;
+}
+
+.bt-game-card__features li::before {
+  content: "▹";
+  color: var(--card-accent, var(--bt-accent-text));
+  font-weight: bold;
+}
+
+.bt-game-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin-top: auto;
+}
+
+.bt-game-card__tags li {
+  padding: 4px 10px;
+  border: 1px solid var(--bt-line-strong);
+  border-radius: 999px;
+  font-family: var(--bt-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bt-muted);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.bt-game-card__footer {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--bt-line);
+}
+
+.bt-btn--game {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 20px;
+  background: var(--card-btn-bg, var(--bt-accent));
+  color: #fff;
+  border: 1px solid var(--card-btn-border, transparent);
+  border-radius: 6px;
+  font-family: var(--bt-sans);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 4px 18px var(--card-glow, rgba(138, 92, 255, 0.3));
+  transition: all 0.25s ease;
+  min-height: 48px;
+}
+
+.bt-btn--game:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px var(--card-glow, rgba(138, 92, 255, 0.5));
+  filter: brightness(1.12);
+}
+
+.bt-btn--game:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   Artwork for each game
+   -------------------------------------------------------------------------- */
+
+/* 1. CONGELADOS ART */
+.bt-art-congelados {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(122, 240, 255, 0.18) 0%, transparent 70%),
+    linear-gradient(180deg, #060a1e 0%, #030610 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bt-congelados-arena {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px dashed rgba(122, 240, 255, 0.3);
+  animation: bt-rotate-slow 24s linear infinite;
+}
+
+.bt-ice-hex {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  stroke: var(--bt-game-cyan);
+  stroke-width: 1.5;
+  fill: rgba(11, 26, 60, 0.5);
+  filter: drop-shadow(0 0 12px rgba(122, 240, 255, 0.6));
+  animation: bt-pulse-hex 3s ease-in-out infinite;
+}
+
+.bt-laser-sweep {
+  position: absolute;
+  width: 2px;
+  height: 140px;
+  background: linear-gradient(180deg, transparent, #ff3b5c 50%, transparent);
+  box-shadow: 0 0 14px #ff3b5c;
+  transform-origin: center bottom;
+  animation: bt-laser-scan 4s ease-in-out infinite alternate;
+}
+
+@keyframes bt-pulse-hex {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(122, 240, 255, 0.5)); }
+  50% { transform: scale(1.06); filter: drop-shadow(0 0 20px rgba(122, 240, 255, 0.85)); }
+}
+
+@keyframes bt-laser-scan {
+  0% { transform: rotate(-50deg); opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { transform: rotate(50deg); opacity: 0.3; }
+}
+
+@keyframes bt-rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 2. LUMEN & UMBRA ART */
+.bt-art-lumen {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 65%, rgba(138, 92, 255, 0.22) 0%, transparent 70%),
+    radial-gradient(circle at 40% 30%, rgba(255, 170, 60, 0.15) 0%, transparent 60%),
+    linear-gradient(180deg, #0b1020 0%, #070914 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bt-art-lumen__orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  border-radius: 50%;
+  animation: bt-lumen-orbit 8s linear infinite;
+}
+
+.bt-art-lumen__orb--lumen {
+  background: radial-gradient(circle at 35% 35%, #fff6d6, #ffc04a 45%, #ff7a1a 80%);
+  box-shadow: 0 0 32px rgba(255, 170, 60, 0.8), 0 0 60px rgba(255, 170, 60, 0.4);
+}
+
+.bt-art-lumen__orb--umbra {
+  background: radial-gradient(circle at 35% 35%, #e4d6ff, #8a5cff 45%, #3a1a8a 85%);
+  box-shadow: 0 0 32px rgba(138, 92, 255, 0.85), 0 0 60px rgba(138, 92, 255, 0.4);
+  animation-delay: -4s;
+}
+
+@keyframes bt-lumen-orbit {
+  from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+}
+
+.bt-art-lumen__pedestal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background:
+    linear-gradient(90deg, rgba(255, 170, 60, 0.2), rgba(138, 92, 255, 0.2)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 28px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 3. LAMPKEEPERS ART */
+.bt-art-lampkeepers {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255, 181, 71, 0.25) 0%, transparent 60%),
+    linear-gradient(180deg, #0b0e22 0%, #050711 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bt-fog-layer {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 80%, rgba(55, 75, 140, 0.25) 0%, transparent 75%);
+  animation: bt-fog-drift 8s ease-in-out infinite alternate;
+}
+
+@keyframes bt-fog-drift {
+  0% { transform: scale(1) translateY(0); opacity: 0.6; }
+  100% { transform: scale(1.08) translateY(-8px); opacity: 0.9; }
+}
+
+.bt-lighthouse-beam {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  width: 220px;
+  height: 90px;
+  background: linear-gradient(90deg, rgba(255, 246, 200, 0.8) 0%, rgba(255, 181, 71, 0.4) 40%, transparent 95%);
+  clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+  transform-origin: 0% 50%;
+  animation: bt-beam-sweep 6s ease-in-out infinite alternate;
+  filter: blur(1px);
+}
+
+@keyframes bt-beam-sweep {
+  0% { transform: rotate(-35deg); opacity: 0.55; }
+  100% { transform: rotate(35deg); opacity: 0.95; }
+}
+
+.bt-lantern-glow {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+  background: radial-gradient(circle, #fffdf0 0%, #ffb547 50%, transparent 75%);
+  border-radius: 50%;
+  box-shadow: 0 0 35px #ffb547, 0 0 65px rgba(255, 181, 71, 0.6);
+  z-index: 2;
+}
+
+.bt-lighthouse-sil {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 110px;
+  fill: #080a18;
+  z-index: 1;
+}
+
+/* 4. PISO FANTASMA ART */
+.bt-art-pf {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(91, 63, 168, 0.35) 0%, transparent 70%),
+    linear-gradient(180deg, #140b2e 0%, #0a0518 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bt-ghost-grid {
+  position: absolute;
+  bottom: 12px;
+  width: 240px;
+  height: 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  transform: perspective(280px) rotateX(48deg);
+}
+
+.bt-ghost-tile {
+  background: #5b3fa8;
+  border: 1px solid var(--bt-game-mint);
+  border-radius: 4px;
+  box-shadow: 0 0 14px rgba(184, 242, 230, 0.4);
+  transition: all 0.3s ease;
+}
+
+.bt-ghost-tile:nth-child(1) { animation: bt-tile-crumble 3.2s ease infinite; }
+.bt-ghost-tile:nth-child(2) { animation: bt-tile-crumble 4.1s ease infinite 0.7s; }
+.bt-ghost-tile:nth-child(3) { animation: bt-tile-crumble 3.6s ease infinite 1.4s; }
+.bt-ghost-tile:nth-child(4) { animation: bt-tile-crumble 4.5s ease infinite 2.1s; }
+
+@keyframes bt-tile-crumble {
+  0%, 100% { opacity: 1; transform: translateY(0); }
+  45% { opacity: 0.2; transform: translateY(12px) scale(0.85); background: #ff5c93; border-color: #ff5c93; }
+  60% { opacity: 0; transform: translateY(24px) scale(0.6); }
+  75% { opacity: 0.7; transform: translateY(0); }
+}
+
+.bt-ghost-sprite {
+  position: absolute;
+  top: 36%;
+  animation: bt-ghost-float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 16px rgba(184, 242, 230, 0.65));
+}
+
+@keyframes bt-ghost-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* --------------------------------------------------------------------------
+   Advantages / Feature Grid (Por qué jugar)
+   -------------------------------------------------------------------------- */
+.bt-features-section {
+  margin-top: clamp(60px, 8vw, 100px);
+  padding-top: clamp(40px, 6vw, 70px);
+  border-top: 1px solid var(--bt-line);
+}
+
+.bt-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin-top: 36px;
+}
+
+.bt-feat-card {
+  padding: 24px;
+  background: var(--bt-ink-2);
+  border: 1px solid var(--bt-line-strong);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.bt-feat-card:hover {
+  border-color: rgba(138, 92, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+.bt-feat-card__icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.bt-feat-card__title {
+  font-family: var(--bt-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+.bt-feat-card__desc {
+  color: var(--bt-muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile & Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .bt-spotlight__grid {
+    grid-template-columns: 1fr;
+  }
+  .bt-spotlight__art {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bt-catalog-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 14px;
+  }
+  .bt-catalog-search-wrap {
+    min-width: 100%;
+  }
+  .bt-games-grid {
+    grid-template-columns: 1fr;
+  }
+  .bt-game-card__art {
+    height: 210px;
+  }
+  .bt-games-ticker {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 10px;
+  }
+  .bt-ticker-item {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bt-games-ticker {
+    grid-template-columns: 1fr;
+  }
+  .bt-spotlight__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .bt-btn--game {
+    font-size: 0.85rem;
+    padding: 12px 16px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .bt-arcade-badge__dot,
+  .bt-nexus-radar,
+  .bt-congelados-arena,
+  .bt-ice-hex,
+  .bt-laser-sweep,
+  .bt-art-lumen__orb,
+  .bt-fog-layer,
+  .bt-lighthouse-beam,
+  .bt-ghost-tile,
+  .bt-ghost-sprite {
+    animation: none !important;
+  }
+  .bt-game-card:hover {
+    transform: none !important;
+  }
+}
