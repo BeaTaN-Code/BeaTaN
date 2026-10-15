@@ -1,0 +1,4 @@
+# Archivos con hash de contenido generados por Vite: se pueden cachear indefinidamente.
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</IfModule>
