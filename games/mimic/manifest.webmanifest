@@ -1,0 +1,15 @@
+{
+  "name": "ECOCAOS · BeaTaN Games Studio",
+  "short_name": "ECOCAOS",
+  "description": "Party game multijugador de imitación de sonidos.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#050307",
+  "theme_color": "#ff2a4d",
+  "lang": "es",
+  "icons": [
+    { "src": "branding/ecocaos-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

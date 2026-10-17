@@ -1,0 +1,10 @@
+{
+  "packs": [
+    {
+      "id": "beatan-local",
+      "name": "Biblioteca local BeaTaN",
+      "manifest": "audio/packs/beatan-local/manifest.json",
+      "count": 70
+    }
+  ]
+}
